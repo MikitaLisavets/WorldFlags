@@ -10,6 +10,8 @@
         timeout = false,
         i = 0;
 
+    getData();
+
     while (i < countryCount) {
 
         countryElements[i].onmouseover = function(event) {
@@ -86,19 +88,22 @@
       }
     }
 
-    function addHighlights(color) {
-      var selectedCountries = [];
+    function addHighlights(ev) {
+      removeHighlights();
+      var color = ev.target.getAttribute('data-color'),
+          selectedCountries = [];
 
       for (var i = 0, len = colors.length; i < len; i++) {
         if (colors[i].color === color) {
-          selectedCountries = colors[i].countries;
+          selectedCountries = colors[i].code;
         }
       }
 
       for (var j = 0, jlen = selectedCountries.length; j < jlen; j++) {
         for (var k = 0, klen = countries.length; k < klen; k++) {
-          if (selectedCountries[j] == countries[k]) {
-            countries[k].classList.add('show');
+          if (selectedCountries[j] === countries[k]['id'].toLowerCase()) {
+            countries[k]['element'].classList.add('show');
+            countries[k]['element'].classList.add('show_' + color);
           }
         }
       }
@@ -106,26 +111,33 @@
 
     function removeHighlights() {
       var elems = document.querySelectorAll('path.show');
-      for (var i = 0, len = elems.length; i <len; i++) {
-        elems[i].className = '';
+      for (var i = 0, len = elems.length; i < len; i++) {
+        elems[i].classList.remove('show_red');
+        elems[i].classList.remove('show_blue');
+        elems[i].classList.remove('show_green');
+        elems[i].classList.remove('show');
       }
     }
 
     function getData() {
       var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open('GET', '/data/data.json', false);
-        xmlhttp.send(null);
-        if(xmlhttp.status == 200) {
-          colors = xmlhttp.responseText;
+        xmlhttp.open('GET', 'data/colors.json', true);
+        xmlhttp.onreadystatechange = function() {
+          if (xmlhttp.readyState == 4) {
+             if(xmlhttp.status == 200) {
+               colors = JSON.parse(xmlhttp.responseText);
 
-          var btns = document.querySelectorAll('container__colors-item');
-          for (var i = 0, len = btns.length; i < len; i++) {
-            btns[i].addEventListener('click', function() {
-              addHighlights(btns[i].getAttribute('data-color'));
-            });
+               var btns = document.querySelectorAll('.container__colors-item'),
+                   color;
+               for (var i = 0, len = btns.length; i < len; i++) {
+                 btns[i].addEventListener('click', function(ev) {
+                   addHighlights(ev);
+                 });
+               }
+            }
           }
-
         }
+        xmlhttp.send(null);
     }
 
 })();
