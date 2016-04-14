@@ -1,0 +1,31 @@
+{
+  "version": "0.0.0",
+  "private": false,
+  "name": "slot-machine",
+  "description": "Slot Machine",
+  "repository": "",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "2.2.0",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-declare": "^0.3.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-less": "^3.0.5",
+    "gulp-load-plugins": "^1.2.0",
+    "less-plugin-autoprefix": "1.5.1",
+    "less-plugin-glob": "1.1.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp-rename": "1.2.2",
+    "gulp-util": "3.0.7"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "globby": "^4.0.0"
+  }
+}
