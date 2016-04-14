@@ -1,0 +1,14 @@
+[
+  {
+    "code": ["ad", "ae", "af", "ag", "ai", "al", "am", "ao", "as", "at", "au", "aw", "ax", "az", "bd", "be", "bf", "bg", "bh", "bi", "bj", "bl", "bm","bn","bo","bq","bv","by","bz","ca","cd","cf","cg","ch","ck","cl","cm","cn","co","cr","cu","cv","cz","de","dj","dk","dm","do","dz","ec","eg","eh","er","es","et","fj","fk","fo","fr","gb-eng","gb-wls","gb","gd","ge","gf","gg","gh","gi","gl","gm","gn","gp","gq","gs","gu","gw","gy","hk","hm","hr","ht","hu","id","im","io","iq","ir","is","it","je","jo","jp","ke","kg","kh","ki","km","kn","kp","kr","kw","ky","la","lb","li","lk","ir","lt","lu","lv","ly","ma","mc","md","me","mf","mg","mk","ml","mm","mn","mq","ms","mt","mu","mv","mw","mx","my","mz","na","nc","ne","nl","no","np","nu","nz","om","pa","pe","pf","pg","ph","pl","pm","pn","pr","ps","pt","py","re","ro","rs","ru","sc","sd","sg","sh","si","sj","sk","sm","sn","sr","ss","st","sx","sy","sz","tc","td","tf","tg","th","tj","tl","tm","tn","to","tr","tt","tv","tw","ug","um","us","uz","ve","vg","vi","vn","vu","wf","ws","ye","yt","za","zm","zw"],
+    "color": "red"
+  },
+  {
+    "code": ["ad","ag","ai","am","aq","ar","as","au","aw","ax","az","ba","bb","bl","bm","bq","br","bv","bw","bz","cd","cf","ck","cl","co","cr","cu","cv","cw","cx","cz","dj","do","ec","ee","et","eu","fi","fj","fk","fm","fo","fr","ga","gb-sct","gb","gm","gp","gr","gs","gt","gu","hm","hn","hr","ht","il","in","io","is","kh","ki","km","kp","kr","ky","kz","la","lc","li","lr","ls","lu","md","mf","mh","mn","mp","mq","ms","mu","my","na","nc","ni","nl","no","np","nr","nu","nz","pa","pf","ph","pm","pn","pr","pw","py","re","ro","rs","ru","rw","sb","sc","se","sh","si","sj","sk","sl","sm","so","ss","sv","sx","sz","tc","td","tf","th","tk","tv","tw","tz","ua","um","un","us","uy","uz","vc","ve","vg","vi","wf","ws","yt","za"],
+    "color": "blue"
+  },
+  {
+    "code":["ae","af","az","bd","bf","bg","bi","bj","bm","bo","br","by","cc","cf","cg","ci","cm","cx","cy","dj","dm","dz","eh","er","et","ga","gb-wls","gd","gf","gh","gm","gn","gq","gs","gt","gu","gw","gy","ht","hu","ie","in","io","iq","ir","it","jm","jo","ke","km","kn","kw","lb","lk","ls","lt","ly","ma","md","me","mg","ml","mm","mo","mr","ms","mu","mv","mw","mx","mz","na","ne","nf","ng","ni","om","pk","pn","ps","pt","rw","sa","sb","sc","sd","sh","sl","sm","sn","sr","ss","st","sy","tc","tg","tj","tm","tz","us","vc","vg","vi","vu","za","zm","zw"],
+    "color":"green"
+  }
+]
