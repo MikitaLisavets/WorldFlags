@@ -2,6 +2,7 @@
     var countryElements = document.getElementById('countries').childNodes,
         countryCount = countryElements.length,
         countries = [],
+        colors = [],
         wrapper = document.getElementById('wrapper'),
         search = document.getElementById('search'),
         globalFlag,
@@ -85,11 +86,46 @@
       }
     }
 
+    function addHighlights(color) {
+      var selectedCountries = [];
+
+      for (var i = 0, len = colors.length; i < len; i++) {
+        if (colors[i].color === color) {
+          selectedCountries = colors[i].countries;
+        }
+      }
+
+      for (var j = 0, jlen = selectedCountries.length; j < jlen; j++) {
+        for (var k = 0, klen = countries.length; k < klen; k++) {
+          if (selectedCountries[j] == countries[k]) {
+            countries[k].classList.add('show');
+          }
+        }
+      }
+    }
+
     function removeHighlights() {
       var elems = document.querySelectorAll('path.show');
       for (var i = 0, len = elems.length; i <len; i++) {
-        elems[i].classList.remove('show');
+        elems[i].className = '';
       }
+    }
+
+    function getData() {
+      var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open('GET', '/data/data.json', false);
+        xmlhttp.send(null);
+        if(xmlhttp.status == 200) {
+          colors = xmlhttp.responseText;
+
+          var btns = document.querySelectorAll('container__colors-item');
+          for (var i = 0, len = btns.length; i < len; i++) {
+            btns[i].addEventListener('click', function() {
+              addHighlights(btns[i].getAttribute('data-color'));
+            });
+          }
+
+        }
     }
 
 })();
