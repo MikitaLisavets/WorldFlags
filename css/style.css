@@ -1635,6 +1635,28 @@ body {
   width: 60px;
   height: 45px;
 }
+.hint {
+  position: absolute;
+  top: calc(130%);
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  width: 131px;
+  text-align: left;
+  font-size: 15px;
+}
+.hint:after {
+  content: " ";
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  margin-left: -15px;
+  border-bottom: 10px solid rgba(0, 0, 0, 0.5);
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+}
 path {
   fill: lightgray;
   stroke: white;
@@ -1653,4 +1675,7 @@ path.show_blue {
 }
 path.show_green {
   fill: #00B26E;
+}
+.search-feld {
+  position: relative;
 }

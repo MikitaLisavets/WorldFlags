@@ -1,0 +1,23 @@
+.hint {
+  position: absolute;
+  top: calc(100% + 30px);
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  width: 131px;
+  text-align: left;
+  font-size: 15px;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    margin-left: -15px;
+    border-bottom: 10px solid rgba(0, 0, 0, 0.5);
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+  }
+}

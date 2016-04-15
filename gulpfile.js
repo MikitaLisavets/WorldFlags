@@ -7,7 +7,15 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
-    concatCss = require('gulp-concat-css');
+    concatCss = require('gulp-concat-css'),
+    connect = require('gulp-connect');
+
+gulp.task('connect', function() {
+    connect.server({
+        root: '',
+        livereload: true
+    });
+});
 
 gulp.task('less', function() {
   gulp.src('less/*.less')
@@ -31,7 +39,7 @@ gulp.task('minify', function() {
 });
 
 
-gulp.task('default', ['less']);
+gulp.task('default', ['connect', 'watch']);
 
 gulp.task('watch', function () {
     gulp.watch(['less/**/*.less'], ['less']);
