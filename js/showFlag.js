@@ -22,7 +22,6 @@
             var flag = document.getElementsByClassName('flag-icon')[0] || false;
 
             if (flag) {
-              console.log(event);
                 flag.style.top = window.scrollY + event.clientY - 50 + 'px';
                 flag.style.left = window.scrollX + event.clientX + 20 + 'px';
             }
