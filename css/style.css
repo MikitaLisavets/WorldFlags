@@ -87,6 +87,16 @@ body {
   left: 20px;
   top: 120px;
 }
+.country {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  width: 131px;
+  text-align: left;
+  font-size: 15px;
+}
 .flag-icon-background {
   background-size: contain;
   background-position: 50%;

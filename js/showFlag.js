@@ -29,9 +29,12 @@
         };
 
         countryElements[i].onmouseout = function() {
-            removeFlag();
+            remove();
         };
 
+        countryElements[i].ondblclick = function(event) {
+            addCountryName(this, event);
+        };
 
         countries.push({
           id: countryElements[i].getAttribute('data-id'),
@@ -43,19 +46,16 @@
     }
 
     search.addEventListener("keyup", function() {
-      var val = this.value,
-          country;
-      removeFlag();
+      var val = this.value;
+        
       removeHighlights();
 
       countryList = getCountryByName(val);
       if (countryList.length) {
         for (var i = 0, len = countryList.length; i < len; i++) {
           countryList[i]['element'].classList.add('show');
-          addFlag(countryList[i]['element']);
         }
       }
-
 
     });
 
@@ -64,23 +64,29 @@
         globalFlag = globalFlag || document.createElement("span");
         globalFlag.className = "flag flag-icon flag-icon-" + context.getAttribute('data-id').toLowerCase();
 
-        if (event) {
-            globalFlag.style.top = window.scrollY + event.clientY - 50 + 'px';
-            globalFlag.style.left = window.scrollX + event.clientX + 10 + 'px';
-        }
-        else {
-            globalFlag.style.top = context.style.top + 'px';
-            globalFlag.style.left = context.style.left + 'px';
-        }
+        globalFlag.style.top = window.scrollY + event.clientY - 50 + 'px';
+        globalFlag.style.left = window.scrollX + event.clientX + 10 + 'px';
 
         wrapper.appendChild(globalFlag);
     }
 
-    function removeFlag() {
-      if (globalFlag) {
-        wrapper.removeChild(globalFlag);
-        globalFlag = null;
-      }
+    function addCountryName(context, event) {
+        country = country || document.createElement("span");
+        country.className = "country";
+        country.innerHTML = context.getAttribute('data-name');
+
+        country.style.top = event.clientY + 10 + 'px';
+        country.style.left = event.clientX + 10  + 'px';
+
+        wrapper.appendChild(country);
+    }
+
+    function remove() {
+      if (globalFlag)  wrapper.removeChild(globalFlag);
+      if (country)  wrapper.removeChild(country);
+
+      globalFlag = null;
+      country = null;
     }
 
     function getCountryByName(name) {
@@ -147,7 +153,7 @@
                }
             }
           }
-        }
+        };
         xmlhttp.send(null);
     }
 
