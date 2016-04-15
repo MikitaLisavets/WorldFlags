@@ -23,12 +23,20 @@ body {
   margin: 0;
 }
 .container__colors {
-  display: block;
+  display: flex;
   margin: 0;
   padding: 0 20px;
   list-style: none;
   text-align: center;
+  justify-content: center;
+  align-items: center;
   flex: 1;
+}
+.container__reset {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 40px;
+  cursor: pointer;
 }
 .container__colors-item {
   width: 25px;

@@ -10,12 +10,20 @@
   }
 
   &__colors {
-    display: block;
+    display: flex;
     margin: 0;
     padding: 0 20px;
     list-style: none;
     text-align: center;
+    justify-content: center;
+    align-items: center;
     flex: 1;
+  }
+  &__reset {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 40px;
+    cursor: pointer;
   }
   &__colors-item {
     width: 25px;

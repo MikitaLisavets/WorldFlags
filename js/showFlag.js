@@ -5,12 +5,17 @@
         colors = [],
         wrapper = document.getElementById('wrapper'),
         search = document.getElementById('search'),
+        reset = document.getElementById('reset'),
         globalFlag,
         country,
         timeout = false,
         i = 0;
 
     getData();
+
+    reset.onclick = function() {
+      removeHighlights();
+    }
 
     while (i < countryCount) {
 
@@ -32,6 +37,10 @@
             remove();
         };
 
+        countryElements[i].onclick = function(event) {
+          randomBack(event);
+        };
+
         countryElements[i].ondblclick = function(event) {
             addCountryName(this, event);
         };
@@ -47,7 +56,7 @@
 
     search.addEventListener("keyup", function() {
       var val = this.value;
-        
+
       removeHighlights();
 
       countryList = getCountryByName(val);
@@ -58,6 +67,14 @@
       }
 
     });
+
+    function randomBack(event) {
+      event.target.style.fill = 'rgb('+ getRandom(0, 255) +', '+ getRandom(0, 255) +', '+ getRandom(0, 255) +')';
+    }
+
+    function getRandom(min, max) {
+      return Math.ceil(Math.random() * (max - min) + min);
+    }
 
 
     function addFlag(context, event) {
@@ -127,12 +144,13 @@
     }
 
     function removeHighlights() {
-      var elems = document.querySelectorAll('path.show');
+      var elems = document.querySelectorAll('path');
       for (var i = 0, len = elems.length; i < len; i++) {
         elems[i].classList.remove('show_red');
         elems[i].classList.remove('show_blue');
         elems[i].classList.remove('show_green');
         elems[i].classList.remove('show');
+        elems[i].style.fill = '';
       }
     }
 
