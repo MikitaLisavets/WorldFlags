@@ -23,13 +23,15 @@
 
             if (flag) {
                 flag.style.top = window.scrollY + event.clientY - 50 + 'px';
-                flag.style.left = window.scrollX + event.clientX + 20 + 'px';
+                flag.style.left = window.scrollX + event.clientX + 10 + 'px';
             }
 
         };
 
+        countryElements[i].onmouseout = function() {
+            removeFlag();
+        };
 
-        countryElements[i].ON
 
         countries.push({
           id: countryElements[i].getAttribute('data-id'),
@@ -63,8 +65,8 @@
         globalFlag.className = "flag flag-icon flag-icon-" + context.getAttribute('data-id').toLowerCase();
 
         if (event) {
-            globalFlag.style.top = event.clientY - 50 + 'px';
-            globalFlag.style.left = event.clientX + 10 + 'px';
+            globalFlag.style.top = window.scrollY + event.clientY - 50 + 'px';
+            globalFlag.style.left = window.scrollX + event.clientX + 10 + 'px';
         }
         else {
             globalFlag.style.top = context.style.top + 'px';
