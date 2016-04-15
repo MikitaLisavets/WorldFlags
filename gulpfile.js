@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     less = require('gulp-less'),
     gutil = require('gulp-util'),
     sourcemaps = require('gulp-sourcemaps'),
-    cssnano = require('gulp-cssnano');
+    cssnano = require('gulp-cssnano'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
@@ -12,7 +12,8 @@ var gulp = require('gulp'),
 
 gulp.task('connect', function() {
     connect.server({
-        root: '',
+        root: '.',
+        port: '7081',
         livereload: true
     });
 });

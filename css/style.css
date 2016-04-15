@@ -38,6 +38,7 @@ body {
   border-radius: 50%;
   border: none;
   cursor: pointer;
+  outline: none;
 }
 .container__colors-item_red {
   background: #F22F2F;
@@ -1670,11 +1671,20 @@ path.show {
 path.show_red {
   fill: #F22F2F;
 }
+path.show_red:hover {
+  fill: #b00b0b;
+}
 path.show_blue {
   fill: #0066B2;
 }
+path.show_blue:hover {
+  fill: #002c4c;
+}
 path.show_green {
   fill: #00B26E;
+}
+path.show_green:hover {
+  fill: #004c2f;
 }
 .search-feld {
   position: relative;

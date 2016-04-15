@@ -1,8 +1,8 @@
 {
   "version": "0.0.0",
   "private": false,
-  "name": "slot-machine",
-  "description": "Slot Machine",
+  "name": "world-map",
+  "description": "World map",
   "repository": "",
   "license": "MIT",
   "devDependencies": {

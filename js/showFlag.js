@@ -22,15 +22,15 @@
             var flag = document.getElementsByClassName('flag-icon')[0] || false;
 
             if (flag) {
-                flag.style.top = event.clientY - 50 + 'px';
-                flag.style.left = event.clientX + 10    + 'px';
+              console.log(event);
+                flag.style.top = window.scrollY + event.clientY - 50 + 'px';
+                flag.style.left = window.scrollX + event.clientX + 20 + 'px';
             }
 
         };
 
-        countryElements[i].onmouseout = function() {
-            removeFlag();
-        };
+
+        countryElements[i].ON
 
         countries.push({
           id: countryElements[i].getAttribute('data-id'),
@@ -47,10 +47,12 @@
       removeFlag();
       removeHighlights();
 
-      country = getCountryByName(val);
-      if (country) {
-        country['element'].classList.add('show');
-        addFlag(country['element']);
+      countryList = getCountryByName(val);
+      if (countryList.length) {
+        for (var i = 0, len = countryList.length; i < len; i++) {
+          countryList[i]['element'].classList.add('show');
+          addFlag(countryList[i]['element']);
+        }
       }
 
 
@@ -63,7 +65,7 @@
 
         if (event) {
             globalFlag.style.top = event.clientY - 50 + 'px';
-            globalFlag.style.left = event.clientX + 10    + 'px';
+            globalFlag.style.left = event.clientX + 10 + 'px';
         }
         else {
             globalFlag.style.top = context.style.top + 'px';
@@ -81,11 +83,19 @@
     }
 
     function getCountryByName(name) {
+      var inputLength = name.length,
+          result = [];
+
+      if (inputLength === 0) {
+        return result;
+      }
+
       for (var i = 0, len = countries.length; i < len; i++) {
-        if (name.toLowerCase() === countries[i].name.toLowerCase() ) {
-          return countries[i];
+        if (name.toLowerCase() === countries[i].name.toLowerCase().slice(0, inputLength) ) {
+          result.push(countries[i]);
         }
       }
+      return result;
     }
 
     function addHighlights(ev) {
