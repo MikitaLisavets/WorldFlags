@@ -37,11 +37,11 @@
             remove();
         };
 
-        countryElements[i].onclick = function(event) {
+        countryElements[i].ondblclick = function(event) {
           randomBack(event);
         };
 
-        countryElements[i].ondblclick = function(event) {
+        countryElements[i].onclick = function(event) {
             addCountryName(this, event);
         };
 
