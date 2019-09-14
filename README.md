@@ -1,5 +1,7 @@
 live: https://mikitalisavets.me/world-flags/
 
+---
+
 Что можно увидеть:
 
 1. onmouseover - подсвечивается определенная страна и показывается ее флаг;
